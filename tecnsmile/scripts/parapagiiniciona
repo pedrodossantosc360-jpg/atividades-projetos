@@ -1,0 +1,5 @@
+const agora=new Date();
+let horas=agora.getHours();
+let minutos=agora.getMinutes();
+texto=document.getElementById('times');
+texto.InnerHTML=horas;

@@ -1,0 +1,84 @@
+img{
+     
+    
+   width:500px ;
+   height: 500px;}
+
+    button{
+        background-color:rgb(0, 255, 0);
+        color: blue;
+    border-radius: 10px 14px 0px 12px;
+    height: auto;
+    width: auto;
+    box-shadow: 2px 3px 5px 1px rgb(33, 3, 73);
+    
+    }
+    #en{  background-color:blue;
+    border-radius: 10px 14px 0px 12px;
+    height: auto;
+    width: auto;
+    box-shadow: 2px 3px 5px 1px rgb(33, 3, 73);}
+    nav{height: 300px;
+    background-color: rgba(0, 0, 0, 0.952);
+margin:-8px -8px 0px -8px;
+        padding: 0px 0px 0px 0px;
+        border: 0px 0px 0px 0px;
+    }
+
+    #logo4{
+        height: 297px;
+        width: 369px;
+        background-image: none;
+    }
+    #bp{height: 126px;
+        width: 196px;
+        background-color:black;
+        color: aliceblue;
+        margin:170px -5px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        border: 0px 0px 0px 0px;
+    }
+    #bp:hover{background-color: rgb(39, 39, 39);
+        transition: 0.50s;
+
+    }
+    img #dentista{
+        height: 491px;
+        width: 430px;
+    }
+    article{width: 400px;}
+    p{
+        width: 300px;
+    }
+   
+
+
+    /* --- Estilos base para o Header (Telas grandes) --- */
+header {
+    background-color:black;
+     /* Espaçamento padrão nas laterais */
+    display: flex;
+    justify-content: space-between; /* Alinha logo à esquerda e nav à direita */
+    align-items: center; /* Centraliza verticalmente */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column; /* Empilha logo e navegação verticalmente */
+        align-items: flex-start; /* Alinha tudo à esquerda */
+        gap: 10px; /* Espaçamento entre o logo e a nav */
+    }
+
+    nav {
+        flex-direction: column; /* Empilha os botões verticalmente */
+        width: 100%; /* Ocupa toda a largura disponível */
+    }
+    
+    #bp {
+        width: 100%; /* Faz com que os botões se expandam para 100% da largura */
+        text-align: left; /* Alinha o texto do botão à esquerda */
+        box-sizing: border-box; /* Garante que padding e border não aumentem a largura */
+    }
+}

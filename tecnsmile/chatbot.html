@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Ajuda - TecSmile</title>
+    <link rel="stylesheet" href="smile.css">
+    <style>
+        :root {
+  --primary: #4f46e5; /* indigo */
+  --secondary: #22c55e; /* green */
+  --bg: #f9fafb;
+  --text: #111827;
+  --muted: #6b7280;
+  --radius: 16px;
+  --shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(180deg, #eef2ff, var(--bg));
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.12);
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: .75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .3s ease, transform .2s ease;
+}
+
+.btn:hover {
+  background: #4338ca;
+  transform: scale(1.05);
+}
+
+.btn.secondary {
+  background: var(--secondary);
+}
+
+input, textarea {
+  width: 100%;
+  padding: .75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  font-size: 1rem;
+  outline: none;
+  transition: border .3s ease, box-shadow .3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79,70,229,.2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  font-size: .9rem;
+}
+        /* === ESTILOS DO CHATBOT === */
+        .chat-container {
+            width: 400px;
+            max-width: 90%;
+            margin: 50px auto;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 2px 3px 10px rgba(33,3,73,0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 500px;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background-color: #f0f8ff;
+        }
+
+        .chat-input {
+            display: flex;
+            border-top: 1px solid #ccc;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            font-size: 16px;
+        }
+
+        .chat-input button {
+            background-color: rgb(0, 255, 0);
+            color: blue;
+            border: none;
+            padding: 0 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message.user {
+            align-items: flex-end;
+        }
+
+        .message.user .text {
+            background-color: rgb(0, 255, 0);
+            color: blue;
+            padding: 8px 12px;
+            border-radius: 10px 10px 0 10px;
+            max-width: 70%;
+            word-wrap: break-word;
+        }
+
+        .message.bot .text {
+            background-color: #007acc;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 10px 10px 10px 0;
+            max-width: 70%;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <!-- === CABEÇALHO PRESERVADO === -->
+    <header>
+        <img src="imagens/smileimage.jpg" alt="" id="logo4" align="left">  
+        <nav align="center">
+            <a href="pagina de consulta.html"><input type="button" value="consultas" id="bp"></a>
+            <a href="paginasmileprincipal.html"><input type="button" value="planos" id="bp"></a>
+            <a href="pagina de inicio.html"><input type="button" value="perfil" id="bp"></a>
+            <a href="chatbot.html"><input type="button" value="central de ajuda" id="bp"></a>
+        </nav>
+    </header>
+
+    <!-- === CONTAINER DO CHATBOT === -->
+    <div class="chat-container">
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+                <div class="text">Olá! Eu sou o assistente virtual da TecSmile. Como posso ajudá-lo hoje?</div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Digite sua mensagem...">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        const chatMessages = document.getElementById('chatMessages');
+        const userInput = document.getElementById('userInput');
+
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (message === "") return;
+
+            addMessage(message, "user");
+            userInput.value = "";
+
+            setTimeout(() => {
+                const response = getBotResponse(message);
+                addMessage(response, "bot");
+            }, 500);
+        }
+
+        function addMessage(text, sender) {
+            const msgDiv = document.createElement("div");
+            msgDiv.classList.add("message", sender);
+
+            const textDiv = document.createElement("div");
+            textDiv.classList.add("text");
+            textDiv.textContent = text;
+
+            msgDiv.appendChild(textDiv);
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function getBotResponse(message) {
+            message = message.toLowerCase();
+
+            if (message.includes("consulta")) {
+                return "Você pode agendar uma consulta pelo nosso site ou informando a data desejada aqui.";
+            } else if (message.includes("plano")) {
+                return "Temos planos básicos e premium. Quer detalhes sobre cada um?";
+            } else if (message.includes("horário") || message.includes("atendimento")) {
+                return "Nosso horário de atendimento é de segunda a sexta, das 8h às 18h, e aos sábados das 8h às 12h.";
+            } else if (message.includes("pagamento")) {
+                return "Você pode consultar pagamentos pendentes na seção de perfil ou falar com nosso atendimento.";
+            } else if (message.includes("oi") || message.includes("olá")) {
+                return "Olá! Como posso ajudá-lo hoje?";
+            } else {
+                return "Desculpe, não entendi. Pode reformular sua pergunta ou escolher uma opção: consulta, plano, horário, pagamento.";
+            }
+        }
+
+        userInput.addEventListener("keypress", function(e) {
+            if (e.key === "Enter") sendMessage();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tecnsmile</title>
+   <link rel="stylesheet" href="smile.css">
+   <link rel="stylesheet" href="socorro.css">
+    <style>
+       
+
+:root {
+  --primary: #4f46e5; /* indigo */
+  --secondary: #22c55e; /* green */
+  --bg: #f9fafb;
+  --text: #111827;
+  --muted: #6b7280;
+  --radius: 16px;
+  --shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(180deg, #eef2ff, var(--bg));
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.12);
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: .75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .3s ease, transform .2s ease;
+}
+
+.btn:hover {
+  background: #4338ca;
+  transform: scale(1.05);
+}
+
+.btn.secondary {
+  background: var(--secondary);
+}
+
+input, textarea {
+  width: 100%;
+  padding: .75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  font-size: 1rem;
+  outline: none;
+  transition: border .3s ease, box-shadow .3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79,70,229,.2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+/* css do texto*/
+
+/* --- Estilo para a nova seção de Serviços --- */
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Layout flexível de 2 ou 3 colunas */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.servico-card {
+    background: var(--white-color);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--primary-color); /* Linha de destaque na cor principal */
+}
+
+.servico-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.servico-card h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+  
+    </style>
+</head>
+<body>
+    <header><img src="imagens/smileimage.jpg" alt="" id="logo4" align="left">  
+        <nav align="center">
+            
+            <a href="paginadeconsulta.html">  <input type="button" value="consultas" align="center" id="bp"></a>
+           <a href="paginasmileprincipal.html"> <input type="button" value="inicio"align="center"id="bp"></a>
+           <a href="pagina de inicio.html"> <input type="button" value="perfil"align="center"id="bp"></a>
+         <a href="chatbot.html">   <input type="button" value="central de ajuda"id="bp" ></a>
+        </nav>
+    </header>
+
+<!-- Header Section (Use o script load_navbar.js se preferir) -->
+   
+
+    <!-- Seção Principal de Serviços -->
+    <section id="servicos">
+        <div class="container">
+          <h1>seja bem vindo a tecnsmile</h1>
+            <h2>Nossos Serviços Odontológicos</h2>
+            <p>Cobrimos todas as necessidades da sua saúde bucal, desde a prevenção mais básica até os procedimentos de reabilitação mais complexos.</p>
+            
+            
+            <div align="center">
+   <section id="carousel-section">
+    <div class="container">
+        <h2>Transformações Reais</h2>
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <!-- Imagem 1: Substitua 'imagem1.jpg' pelo caminho real da sua imagem -->
+                <img src="imagens/dentistaprincipal.jpeg" alt="Sorriso Antes e Depois 1">
+                <!-- Imagem 2 -->
+                <img src="imagens/OIP.jpeg" alt="Sorriso Antes e Depois 2">
+                <!-- Imagem 3 -->
+                <img src="imagens/Odontologia-Digital (1).jpg" alt="Sorriso Antes e Depois 3">
+            </div>
+            <!-- Botões de navegação (opcional) -->
+            <button class="carousel-btn prev">❮</button>
+            <button class="carousel-btn next">❯</button>
+        </div>
+    </div>
+</section>
+   
+              <div class="servicos-grid">
+                <!-- Card de Serviço 1 -->
+                <div class="servico-card">
+                    <h3>Clareamento Dental</h3>
+                    <p>Utilizamos tecnologias avançadas para um sorriso mais branco e brilhante em poucas sessões.</p>
+                </div>
+                
+                <!-- Card de Serviço 2 -->
+                <div class="servico-card">
+                    <h3>Implantes e Próteses</h3>
+                    <p>Recupere a função e a estética do seu sorriso com soluções duradouras e personalizadas.</p>
+                </div>
+
+                <!-- Card de Serviço 3 -->
+                <div class="servico-card">
+                    <h3>Ortodontia Digital</h3>
+                    <p>Alinhadores transparentes e tratamentos rápidos com escaneamento 3D e planejamento digital.</p>
+                </div>
+                
+                <!-- Card de Serviço 4 -->
+                <div class="servico-card">
+                    <h3>Odontologia Estética</h3>
+                    <p>Lentes de contato dental, facetas e restaurações que transformam seu visual.</p>
+                </div>
+                
+                <!-- Card de Serviço 5 -->
+                <div class="servico-card">
+                    <h3>Prevenção e Limpeza</h3>
+                    <p>A base de um sorriso saudável começa com a prevenção regular e acompanhamento profissional.</p>
+                </div>
+
+                <!-- Card de Serviço 6 -->
+                <div class="servico-card">
+                    <h3>Endodontia (Tratamento de Canal)</h3>
+                    <p>Tecnologia e cuidado para tratar a polpa dental e salvar seu dente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container" align="center">
+            <p>&copy; 2025 Tecnsmile Odontologia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script>// carousel.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    const slide = document.querySelector('.carousel-slide');
+    const images = document.querySelectorAll('.carousel-slide img');
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+
+    let counter = 0;
+    const size = images[0].clientWidth; // Largura de uma única imagem
+
+    // Listener para o botão 'próximo'
+    nextBtn.addEventListener('click', () => {
+        if (counter >= images.length - 1) return; // Impede rolagem infinita manual
+        counter++;
+        slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    });
+
+    // Listener para o botão 'anterior'
+    prevBtn.addEventListener('click', () => {
+        if (counter <= 0) return;
+        counter--;
+        slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    });
+});</script>
+
+</body>
+</html>

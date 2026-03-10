@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecnSmile</title>
+    <link rel="stylesheet" href="smile.css">
+    <style>
+        /* ===== FORMULÁRIO DE AGENDAMENTO ===== */
+:root {
+  --primary: #4f46e5; /* indigo */
+  --secondary: #22c55e; /* green */
+  --bg: #f9fafb;
+  --text: #111827;
+  --muted: #6b7280;
+  --radius: 16px;
+  --shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(180deg, #eef2ff, var(--bg));
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.12);
+}h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: .75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .3s ease, transform .2s ease;
+}
+
+.btn:hover {
+  background: #4338ca;
+  transform: scale(1.05);
+}
+
+.btn.secondary {
+  background: var(--secondary);
+}
+
+input, textarea {
+  width: 100%;
+  padding: .75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  font-size: 1rem;
+  outline: none;
+  transition: border .3s ease, box-shadow .3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79,70,229,.2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  font-size: .9rem;
+}
+form {
+  background-color: rgba(255, 255, 255, 0.95);
+  width: 400px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 2px 3px 8px rgba(0,0,0,0.3);
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+form:hover {
+  transform: scale(1.02);
+}
+
+/* Inputs e Select */
+select,
+input[type="date"],
+input[type="time"],
+input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid rgb(33, 3, 73);
+  border-radius: 10px;
+  background-color: #f9f9ff;
+  color: #000;
+  font-size: 15px;
+  transition: 0.3s ease;
+  box-shadow: inset 1px 1px 5px rgba(0,0,0,0.1);
+}
+
+/* Efeito ao clicar/focar */
+select:focus,
+input:focus {
+  outline: none;
+  border-color: rgb(0, 255, 0);
+  box-shadow: 0 0 8px rgba(0,255,0,0.4);
+  background-color: white;
+}
+
+/* Botão de envio */
+input[type="submit"] {
+  background-color: blue;
+  color: white;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 10px 14px 0px 12px;
+  border: none;
+  box-shadow: 2px 3px 5px 1px rgb(33, 3, 73);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(0, 255, 0);
+  color: blue;
+  transform: scale(1.05);
+}
+
+/* ===== CONTADOR DE CONSULTAS ===== */
+#conta {
+  text-align: center;
+  margin-top: 30px;
+  background-color: white;
+  width: 300px;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 2px 3px 8px rgba(0,0,0,0.2);
+}
+
+#textoso {
+  font-size: 40px;
+  color: blue;
+}
+
+/* ===== TITULOS ===== */
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  color: rgb(33, 3, 73);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="imagens/smileimage.jpg" alt="" id="logo4" align="left">
+        <nav align="center">
+           <a href="paginadeconsulta.html"><input type="button" value="consultas" id="bp"></a>
+           <a href="paginasmileprincipal.html"><input type="button" value="início" id="bp"></a>
+           <a href="pagina de inicio.html"><input type="button" value="perfil" id="bp"></a>
+           <a href="chatbot.html"><input type="button" value="central de ajuda" id="bp"></a>
+        </nav>
+    </header>
+
+    <div align="center">
+        <h1>TecnSmile: Redefinindo a arte de sorrir com tecnologia.</h1>
+    </div>
+
+    <div id="conta">
+      <h1>Consultas marcadas</h1>
+      <h2 id="textoso"></h2>
+    </div>
+
+    <form id="ff" method="post">
+      <div align="center">
+        <h3>Agende sua consulta</h3>
+        <select name="selecao" id="selecao">
+            <option value="">Selecione um serviço</option>
+            <option value="Check-up Digital">Check-up Digital</option>
+            <option value="Clareamento Dental">Clareamento Dental</option>
+            <option value="Limpeza Profissional">Limpeza Profissional</option>
+            <option value="Restaurações">Restaurações</option>
+            <option value="Aparelho">Aparelho</option>
+            <option value="Outros">Outros</option>
+        </select>
+        <br>
+        <input type="date" name="dia" id="dia"><br>
+        <input type="time" name="hora" id="hora"><br>
+        <input type="submit" value="Agendar">
+      </div>
+    </form>
+
+    <script src="ar01.js"></script>
+</body>
+</html>
